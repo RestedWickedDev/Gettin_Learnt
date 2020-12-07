@@ -1,0 +1,17 @@
+<div class="row">
+      <div class="col">
+          <span class="navbar-brand p-1 mb-0 h1">Gettin' Learnt</span>
+      </div>
+      <div class="col">
+          <ul class="nav nav-pills justify-content-end">
+              {% url 'index' as index_url %}
+              {% if request.path == index_url %}<li class="nav-item"><a class="nav-link active" href="{{ index_url }}">Home</a></li>{% else %}<li class="nav-item"><a class="nav-link" href="{{ index_url }}">Home</a></li>{% endif %}
+              {% url 'guitar' as guitar_url %}
+              {% if request.path == guitar_url %}<li class="nav-item"><a class="nav-link active" href="{{ guitar_url }}">Guitar</a></li>{% else %}<li class="nav-item"><a class="nav-link" href="{{ guitar_url }}">Guitar</a></li>{% endif %}
+              {% url 'art' as art_url %}
+              <li class="nav-item"><a class="nav-link" href="{{ art_url }}">Art</a></li>
+              {% url 'game' as game_url %}
+              <li class="nav-item"><a class="nav-link" href="{{ game_url }}">Game</a></li>
+          </ul>
+      </div>
+  </div>

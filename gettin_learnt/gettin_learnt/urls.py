@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from . import views
+
 urlpatterns = [
-    path('app/', include('gettin_learnin.urls')),
     path('admin/', admin.site.urls),
+    path('', views.index, name="index"),
+    path('guitar/', views.guitar, name="guitar"),
+    path('art/', views.art, name="art"),
+    path('game/', views.game, name="game")
 ]
